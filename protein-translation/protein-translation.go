@@ -73,5 +73,6 @@ func getProteins(codons []string) []string {
 
 func main() {
 	codons := getCodons("AUGUUUUCUUAAAUG")
-	fmt.Print(getProteins(codons))
+	proteins := getProteins(codons)
+	fmt.Print(proteins)
 }
