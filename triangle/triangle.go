@@ -23,4 +23,6 @@ func getTriangle(l1, l2, l3 int){
 
 func main() {
 	getTriangle(5,4,7)
+	getTriangle(5,5,7)
+	getTriangle(2,2,2)
 }
