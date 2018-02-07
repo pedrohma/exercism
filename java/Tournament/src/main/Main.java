@@ -13,7 +13,8 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		ArrayList<Team> teams = new Team().getListTeams();
+		new Team();
+		ArrayList<Team> teams = Team.getListTeams();
 		
 		List<String> results = Arrays.asList("Allegoric Alaskans;Blithering Badgers;win", "Devastating Donkeys;Courageous Californians;draw", "Devastating Donkeys;Allegoric Alaskans;win", "Courageous Californians;Blithering Badgers;loss", "Blithering Badgers;Devastating Donkeys;loss", "Allegoric Alaskans;Courageous Californians;win");
 		
@@ -24,10 +25,12 @@ public class Main {
 			String Team2 = resultArray[1];
 			String gameResult = resultArray[2];
 			
-			Team t1 = new Team().getTeamByName(Team1, teams);
-			Team t2 = new Team().getTeamByName(Team2, teams);
+			new Team();
+			Team t1 = Team.getTeamByName(Team1, teams);
+			new Team();
+			Team t2 = Team.getTeamByName(Team2, teams);
 			
-			new Rules().calculatePoints(t1, t2, gameResult);
+			Rules.calculatePoints(t1, t2, gameResult);
 		}
 
 		System.out.println(Util.displayTournament(teams));
