@@ -1,8 +1,28 @@
 package rules;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import entity.Team;
 
 public class Rules {
+	
+	public static void getResults(List<String> results, ArrayList<Team> teams) {
+		for (String result : results) {
+			String[] resultArray = result.split(";");
+
+			String Team1 = resultArray[0];
+			String Team2 = resultArray[1];
+			String gameResult = resultArray[2];
+
+			new Team();
+			Team t1 = Team.getTeamByName(Team1, teams);
+			new Team();
+			Team t2 = Team.getTeamByName(Team2, teams);
+
+			Rules.calculatePoints(t1, t2, gameResult);
+		}
+	}
 	
 	public static void calculatePoints(Team team1, Team team2, String operation) {
 		try {

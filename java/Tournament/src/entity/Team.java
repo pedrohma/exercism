@@ -11,8 +11,7 @@ public class Team {
 	private Integer D;
 	private Integer L;
 	private Integer P;
-	
-	
+
 	public Team(String name) {
 		super();
 		Name = name;
@@ -79,38 +78,38 @@ public class Team {
 	public String toString() {
 		return "Team [Name=" + Name + ", MP=" + MP + ", W=" + W + ", D=" + D + ", L=" + L + ", P=" + P + "]";
 	}
-	
-	public static ArrayList<Team> getListTeams(){
-		
-		List<String> teamNames = Arrays.asList("Devastating Donkeys", "Allegoric Alaskans", "Blithering Badgers", "Courageous Californians");
-		
+
+	public static ArrayList<Team> getListTeams() {
+
+		List<String> teamNames = Arrays.asList("Devastating Donkeys", "Allegoric Alaskans", "Blithering Badgers",
+				"Courageous Californians");
+
 		ArrayList<Team> teams = new ArrayList<Team>();
-		
-		for(String name : teamNames) {
+
+		for (String name : teamNames) {
 			teams.add(new Team(name));
 		}
-		
+
 		return teams;
 	}
-	
+
 	public static Team getTeamByName(String Name, ArrayList<Team> teams) {
-		
+
 		Team team = null;
-		
+
 		try {
-			
-			for(Team t: teams) {
-				if(t.Name.equalsIgnoreCase(Name)) {
+
+			for (Team t : teams) {
+				if (t.Name.equalsIgnoreCase(Name)) {
 					team = t;
 				}
 			}
-			
-		}
-		catch(Exception ex) {
+
+		} catch (Exception ex) {
 			System.out.println("An error occurred: " + ex.getMessage());
 		}
-		
+
 		return team;
 	}
-	
+
 }
